@@ -1,6 +1,8 @@
 {
   "name": "taskdone",
   "version": "0.1.0",
+  "description": "Taskdone - To-do List.",
+  "author": "Xian Yao Ng <yao009@hotmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",

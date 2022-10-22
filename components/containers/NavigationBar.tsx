@@ -1,6 +1,6 @@
 import Logo from "../elements/Logo";
 import GetStartedButton from "../elements/GetStartedButton";
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 const NavigationBar = () => {
   return (

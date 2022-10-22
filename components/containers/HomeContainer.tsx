@@ -1,5 +1,5 @@
 import GetStartedButton from "../elements/GetStartedButton";
-import { Button, Box, Container, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Heading, Stack, Text } from "@chakra-ui/react";
 
 const HomeContainer = () => {
   return (
@@ -13,9 +13,7 @@ const HomeContainer = () => {
             textAlign={"center"}
           >
             Get your work done
-            <Text>
-              with ✅ Taskdone
-            </Text>
+            <Text>with ✅ Taskdone</Text>
           </Heading>
           <Box pt={5}>
             <GetStartedButton />

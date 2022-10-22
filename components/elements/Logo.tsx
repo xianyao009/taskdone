@@ -6,13 +6,8 @@ const Logo = () => {
     <Heading as="h1">
       <Link href="/">
         <a>
-          <Text
-            color="black"
-            fontSize={22}
-            fontWeight="bold"
-          >
-            ✅
-            Taskdone
+          <Text color="black" fontSize={22} fontWeight="bold">
+            ✅ Taskdone
           </Text>
         </a>
       </Link>

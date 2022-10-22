@@ -1,5 +1,5 @@
 import Logo from "../elements/Logo";
-import { Box, Button, Flex} from "@chakra-ui/react";
+import { Box, Button, Flex } from "@chakra-ui/react";
 
 const NavigationBar = () => {
   return (
@@ -11,10 +11,10 @@ const NavigationBar = () => {
         p={5}
       >
         <Box>
-            <Logo />
+          <Logo />
         </Box>
         <Button variant={"solid"} colorScheme={"green"} size={"md"}>
-            Get Started
+          Get Started
         </Button>
       </Flex>
     </>

@@ -13,7 +13,13 @@ const NavigationBar = () => {
         <Box>
           <Logo />
         </Box>
-        <Button variant={"solid"} colorScheme={"green"} size={"md"}>
+        <Button
+          variant={"solid"}
+          colorScheme={"green"}
+          bg={"#16c60c"}
+          size={"md"}
+          fontWeight="bold"
+        >
           Get Started
         </Button>
       </Flex>

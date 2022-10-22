@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button, Image, Text, Heading } from "@chakra-ui/react";
+import { Text, Heading } from "@chakra-ui/react";
 
 const Logo = () => {
   return (

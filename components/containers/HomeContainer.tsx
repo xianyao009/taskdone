@@ -18,7 +18,7 @@ const HomeContainer = () => {
           </Heading>
           <HStack pt={5}>
             <GetStartedButton />
-            <SignInButton />
+            <SignInButton buttonVariant="solid" />
           </HStack>
         </Stack>
       </Container>

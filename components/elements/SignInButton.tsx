@@ -1,9 +1,13 @@
 import { Button } from "@chakra-ui/react";
 
-const SignInButton = () => {
+type SignInButtonProps = {
+    buttonVariant: string;
+};
+
+const SignInButton = ({ buttonVariant }: SignInButtonProps) => {
   return (
     <Button
-    variant={"ghost"}
+    variant={buttonVariant}
       size={"lg"}
       fontWeight="bold"
     >

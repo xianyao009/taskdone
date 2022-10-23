@@ -12,7 +12,7 @@ const NavigationBar = () => {
           <Logo />
         </Box>
         <HStack>
-          <SignInButton />
+          <SignInButton buttonVariant="ghost"/>
           <GetStartedButton />
           <Box pl={7}>
             <ColorModeToggleButton />

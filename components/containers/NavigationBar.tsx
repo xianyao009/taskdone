@@ -1,20 +1,24 @@
 import Logo from "../elements/Logo";
 import GetStartedButton from "../elements/GetStartedButton";
-import { Box, Flex } from "@chakra-ui/react";
+import SignInButton from "../elements/SignInButton";
+import ColorModeToggleButton from "../elements/ColorModeToggleButton";
+import { Box, Flex, HStack } from "@chakra-ui/react";
 
 const NavigationBar = () => {
   return (
     <>
-      <Flex
-        bg="white"
-        alignItems={"center"}
-        justifyContent={"space-between"}
-        p={5}
-      >
+      <Flex alignItems={"center"} justifyContent={"space-between"} p={5}>
         <Box>
           <Logo />
         </Box>
-        <GetStartedButton />
+        <HStack>
+          <SignInButton />
+          <GetStartedButton />
+          <Box pl={7}>
+            <ColorModeToggleButton />
+          </Box>
+          
+        </HStack>
       </Flex>
     </>
   );

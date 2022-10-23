@@ -3,7 +3,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { Box, Menu, MenuButton, MenuList, IconButton } from "@chakra-ui/react";
 
 type HamburgerMenuProps = {
-    children: ReactNode;
+  children: ReactNode;
 };
 
 const HamburgerMenu = ({ children }: HamburgerMenuProps) => {
@@ -15,9 +15,7 @@ const HamburgerMenu = ({ children }: HamburgerMenuProps) => {
           icon={<HamburgerIcon />}
           variant="outline"
         />
-        <MenuList>
-            {children}
-        </MenuList>
+        <MenuList>{children}</MenuList>
       </Menu>
     </Box>
   );

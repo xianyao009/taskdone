@@ -29,7 +29,12 @@ const NavigationBar = () => {
           </Box>
           <HamburgerMenu>
             {<HamburgerMenuElement linkTo="/signin" elementString="Sign In" />}
-            {<HamburgerMenuElement linkTo="/signup" elementString="Get Started" />}
+            {
+              <HamburgerMenuElement
+                linkTo="/signup"
+                elementString="Get Started"
+              />
+            }
           </HamburgerMenu>
         </HStack>
       </Flex>

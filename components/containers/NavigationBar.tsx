@@ -1,6 +1,8 @@
 import Logo from "../elements/Logo";
 import GetStartedButton from "../elements/GetStartedButton";
 import SignInButton from "../elements/SignInButton";
+import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenuElement from "../elements/HamburgerMenuElement";
 import ColorModeToggleButton from "../elements/ColorModeToggleButton";
 import {
   Box,
@@ -18,11 +20,17 @@ const NavigationBar = () => {
           <Logo />
         </Box>
         <HStack>
-          <SignInButton buttonVariant="ghost" />
-          <GetStartedButton />
+          <Box display={{ base: "none", md: "flex" }}>
+            <SignInButton buttonVariant="ghost" />
+            <GetStartedButton />
+          </Box>
           <Box pl={7}>
             <ColorModeToggleButton />
           </Box>
+          <HamburgerMenu>
+            {<HamburgerMenuElement linkTo="/signin" elementString="Sign In" />}
+            {<HamburgerMenuElement linkTo="/signup" elementString="Get Started" />}
+          </HamburgerMenu>
         </HStack>
       </Flex>
       <Divider borderColor={useColorModeValue("gray.300", "gray.700")} />

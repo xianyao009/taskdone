@@ -1,5 +1,6 @@
 import GetStartedButton from "../elements/GetStartedButton";
-import { Box, Container, Heading, Stack, Text } from "@chakra-ui/react";
+import SignInButton from "../elements/SignInButton";
+import { Container, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 
 const HomeContainer = () => {
   return (
@@ -15,9 +16,10 @@ const HomeContainer = () => {
             Get your work done
             <Text>with ✅ Taskdone</Text>
           </Heading>
-          <Box pt={5}>
+          <HStack pt={5}>
             <GetStartedButton />
-          </Box>
+            <SignInButton />
+          </HStack>
         </Stack>
       </Container>
     </>

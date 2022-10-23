@@ -16,7 +16,7 @@ const HomeContainer = () => {
             Get your work done
             <Text>with ✅ Taskdone</Text>
           </Heading>
-          <HStack pt={5}>
+          <HStack pt={5} spacing='20px'>
             <GetStartedButton />
             <SignInButton buttonVariant="solid" />
           </HStack>

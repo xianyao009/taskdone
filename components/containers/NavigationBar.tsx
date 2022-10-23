@@ -24,7 +24,7 @@ const NavigationBar = () => {
             <SignInButton buttonVariant="ghost" />
             <GetStartedButton />
           </Box>
-          <Box pl={7}>
+          <Box pl={5}>
             <ColorModeToggleButton />
           </Box>
           <HamburgerMenu>

@@ -2,7 +2,13 @@ import Logo from "../elements/Logo";
 import GetStartedButton from "../elements/GetStartedButton";
 import SignInButton from "../elements/SignInButton";
 import ColorModeToggleButton from "../elements/ColorModeToggleButton";
-import { Box, Divider, Flex, HStack, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Flex,
+  HStack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 const NavigationBar = () => {
   return (
@@ -12,7 +18,7 @@ const NavigationBar = () => {
           <Logo />
         </Box>
         <HStack>
-          <SignInButton buttonVariant="ghost"/>
+          <SignInButton buttonVariant="ghost" />
           <GetStartedButton />
           <Box pl={7}>
             <ColorModeToggleButton />

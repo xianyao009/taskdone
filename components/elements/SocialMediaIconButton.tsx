@@ -19,11 +19,7 @@ const SocialMediaIconButton = ({
 }: SocialMediaIconButtonProps) => {
   return (
     <LinkContainer linkTo={linkTo} target="_blank">
-      <Tooltip
-        hasArrow
-        label={tooltip}
-        openDelay={500}
-      >
+      <Tooltip hasArrow label={tooltip} openDelay={500}>
         <IconButton
           aria-label={socialMedia}
           icon={<Icon fontSize={iconSize} />}

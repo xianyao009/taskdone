@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Head from "next/head";
 import NavigationBar from "./NavigationBar";
+import Footer from "./Footer";
 
 type LayoutProps = {
   children: ReactNode;
@@ -22,6 +23,7 @@ const Layout = ({ children, title = "Taskdone - To-do List" }: LayoutProps) => {
       </Head>
       <NavigationBar />
       {children}
+      <Footer />
     </>
   );
 };

@@ -1,3 +1,5 @@
+import Logo from "../elements/Logo";
+import LinkContainer from "../containers/LinkContainer";
 import GetStartedButton from "../elements/GetStartedButton";
 import SignInButton from "../elements/SignInButton";
 import { Container, Heading, HStack, Stack, Text } from "@chakra-ui/react";
@@ -14,7 +16,11 @@ const HomeContainer = () => {
             textAlign={"center"}
           >
             Get your work done
-            <Text>with ✅ Taskdone</Text>
+            <Text>
+              with
+              <Text as={"span"}> </Text>
+              <Logo fontSize={50} />
+            </Text>
           </Heading>
           <HStack pt={5} spacing="20px">
             <GetStartedButton />

@@ -1,4 +1,5 @@
 import Logo from "../elements/Logo";
+import LinkContainer from "../containers/LinkContainer";
 import GetStartedButton from "../elements/GetStartedButton";
 import SignInButton from "../elements/SignInButton";
 import HamburgerMenu from "./HamburgerMenu";
@@ -16,9 +17,9 @@ const NavigationBar = () => {
   return (
     <>
       <Flex alignItems={"center"} justifyContent={"space-between"} p={5}>
-        <Box>
-          <Logo />
-        </Box>
+        <LinkContainer linkTo="/">
+          <Logo fontSize={22} />
+        </LinkContainer>
         <HStack>
           <Box display={{ base: "none", md: "flex" }}>
             <SignInButton buttonVariant="ghost" />

@@ -1,15 +1,14 @@
-import LinkContainer from "../containers/LinkContainer";
-import { Text, Heading } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
-const Logo = () => {
+type LogoProps = {
+  fontSize: number;
+};
+
+const Logo = ({ fontSize }: LogoProps) => {
   return (
-    <Heading as="h1">
-      <LinkContainer linkTo="/">
-        <Text fontSize={22} fontWeight="bold">
-          ✅ Taskdone
-        </Text>
-      </LinkContainer>
-    </Heading>
+    <Text as="span" fontSize={fontSize} fontWeight="bold">
+      ✅ Taskdone
+    </Text>
   );
 };
 

@@ -4,12 +4,13 @@ import Link from "next/link";
 type LinkContainerProps = {
   children: ReactNode;
   linkTo: string;
+  target: string;
 };
 
-const LinkContainer = ({ children, linkTo }: LinkContainerProps) => {
+const LinkContainer = ({ children, linkTo, target }: LinkContainerProps) => {
   return (
     <Link href={linkTo}>
-      <a>{children}</a>
+      <a target={target}>{children}</a>
     </Link>
   );
 };

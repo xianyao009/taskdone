@@ -17,8 +17,8 @@ const NavigationBar = () => {
   return (
     <>
       <Flex alignItems={"center"} justifyContent={"space-between"} p={5}>
-        <LinkContainer linkTo="/">
-          <Logo fontSize={22} />
+        <LinkContainer linkTo="/" target="_self">
+          <Logo fontSize={28} />
         </LinkContainer>
         <HStack>
           <Box display={{ base: "none", md: "flex" }}>

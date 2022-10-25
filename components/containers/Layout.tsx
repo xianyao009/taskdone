@@ -21,9 +21,7 @@ const Layout = ({ children, title = "Taskdone - To-do List" }: LayoutProps) => {
         />
         <title>{title}</title>
       </Head>
-      <NavigationBar />
       {children}
-      <Footer />
     </>
   );
 };

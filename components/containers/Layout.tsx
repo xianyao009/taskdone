@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 import Head from "next/head";
-import NavigationBar from "./NavigationBar";
-import Footer from "./Footer";
 
 type LayoutProps = {
   children: ReactNode;

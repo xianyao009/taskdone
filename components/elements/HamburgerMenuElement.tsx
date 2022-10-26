@@ -11,7 +11,7 @@ const HamburgerMenuElement = ({
   elementString,
 }: HamburgerMenuElementProps) => {
   return (
-    <LinkContainer linkTo={linkTo}>
+    <LinkContainer linkTo={linkTo} target="_self">
       <MenuItem>{elementString}</MenuItem>
     </LinkContainer>
   );

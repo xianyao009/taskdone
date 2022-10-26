@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/react";
 
 const GetStartedButton = () => {
   return (
-    <LinkContainer linkTo="/signup">
+    <LinkContainer linkTo="/signup" target="_self">
       <Button
         colorScheme={"green"}
         bg={"#16c60c"}

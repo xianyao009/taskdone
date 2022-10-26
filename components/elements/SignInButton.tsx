@@ -7,7 +7,7 @@ type SignInButtonProps = {
 
 const SignInButton = ({ buttonVariant }: SignInButtonProps) => {
   return (
-    <LinkContainer linkTo="/signin">
+    <LinkContainer linkTo="/signin" target="_self">
       <Button variant={buttonVariant} size={"lg"} fontWeight="bold">
         Sign In
       </Button>

@@ -1,5 +1,4 @@
 import Logo from "../elements/Logo";
-import LinkContainer from "../containers/LinkContainer";
 import GetStartedButton from "../elements/GetStartedButton";
 import SignInButton from "../elements/SignInButton";
 import { Container, Heading, HStack, Stack, Text } from "@chakra-ui/react";

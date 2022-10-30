@@ -17,7 +17,7 @@ const MenuIconButton = ({ children, icon, label }: MenuIconButtonProps) => {
   return (
     <Menu>
       <Tooltip hasArrow label={label} openDelay={500}>
-        <MenuButton as={IconButton} icon={icon} variant="outline" />
+        <MenuButton as={IconButton} icon={icon} variant="ghost" />
       </Tooltip>
       <MenuList>{children}</MenuList>
     </Menu>

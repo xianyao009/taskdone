@@ -2,8 +2,9 @@ import Logo from "../elements/Logo";
 import LinkContainer from "../containers/LinkContainer";
 import GetStartedButton from "../elements/GetStartedButton";
 import SignInButton from "../elements/SignInButton";
-import HamburgerMenu from "./HamburgerMenu";
-import HamburgerMenuElement from "../elements/HamburgerMenuElement";
+import MenuIconButton from "../elements/MenuIconButton";
+import MenuItemComponent from "../elements/MenuItemComponent";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import ColorModeToggleButton from "../elements/ColorModeToggleButton";
 import {
   Box,
@@ -28,15 +29,17 @@ const NavigationBar = () => {
           <Box pl={5}>
             <ColorModeToggleButton />
           </Box>
-          <HamburgerMenu>
-            {<HamburgerMenuElement linkTo="/signin" elementString="Sign In" />}
-            {
-              <HamburgerMenuElement
-                linkTo="/signup"
-                elementString="Get Started"
-              />
-            }
-          </HamburgerMenu>
+          <Box display={{ base: "inline-block", md: "none" }}>
+            <MenuIconButton icon={<HamburgerIcon />} label="Menu">
+              {<MenuItemComponent linkTo="/signin" elementString="Sign In" />}
+              {
+                <MenuItemComponent
+                  linkTo="/signup"
+                  elementString="Get Started"
+                />
+              }
+            </MenuIconButton>
+          </Box>
         </HStack>
       </Flex>
       <Divider borderColor={useColorModeValue("gray.300", "gray.700")} />

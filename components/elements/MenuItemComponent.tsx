@@ -1,15 +1,15 @@
 import LinkContainer from "../containers/LinkContainer";
 import { MenuItem } from "@chakra-ui/react";
 
-type HamburgerMenuElementProps = {
+type MenuItemComponentProps = {
   linkTo: string;
   elementString: string;
 };
 
-const HamburgerMenuElement = ({
+const MenuItemComponent = ({
   linkTo,
   elementString,
-}: HamburgerMenuElementProps) => {
+}: MenuItemComponentProps) => {
   return (
     <LinkContainer linkTo={linkTo} target="_self">
       <MenuItem>{elementString}</MenuItem>
@@ -17,4 +17,4 @@ const HamburgerMenuElement = ({
   );
 };
 
-export default HamburgerMenuElement;
+export default MenuItemComponent;

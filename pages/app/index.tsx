@@ -1,4 +1,5 @@
 import LinkContainer from "../../components/containers/LinkContainer";
+import AppHeaderSideBarContainer from "../../components/containers/AppHeaderSideBarContainer";
 import TodoList from "../../components/containers/TodoList";
 
 import { Box, Button, Center, Text } from "@chakra-ui/react";
@@ -27,6 +28,7 @@ const app = ({ isSuccess, todos }: TaskdoneProps) => {
   return (
     <>
       <Box>
+        <AppHeaderSideBarContainer />
         <TodoList todos={todos} />
       </Box>
     </>

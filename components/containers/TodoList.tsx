@@ -1,3 +1,4 @@
+import AddTaskModal from "./AddTaskModal";
 import {
   Accordion,
   AccordionButton,
@@ -20,6 +21,7 @@ const TodoList = ({ todos }: TodoListProps) => {
     <>
       <Center>
         <Box ml={{ base: 0, md: 60 }} maxW="70%">
+          <AddTaskModal />
           <Accordion allowMultiple>
             {todos.map((todo: ITodoType) => (
               <AccordionItem key={todo._id}>

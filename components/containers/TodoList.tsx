@@ -9,7 +9,6 @@ import {
   Box,
   Center,
   Checkbox,
-  HStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 

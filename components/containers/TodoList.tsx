@@ -42,13 +42,11 @@ const TodoList = ({ todos, addTask, deleteTask }: TodoListProps) => {
                 </AccordionButton>
                 <AccordionPanel m="2">
                   {todo.description}
-                  <HStack>
-                    <DeleteTaskModal
-                      task={todo.title}
-                      id={todo._id}
-                      deleteTask={deleteTask}
-                    />
-                  </HStack>
+                  <DeleteTaskModal
+                    task={todo.title}
+                    id={todo._id}
+                    deleteTask={deleteTask}
+                  />
                 </AccordionPanel>
               </AccordionItem>
             ))}

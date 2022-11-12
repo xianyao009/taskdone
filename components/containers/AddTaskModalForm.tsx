@@ -30,7 +30,8 @@ type AddTaskModalFormProps = {
 const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const { register, handleSubmit, setFocus } = useForm<FormValuesTypes>();
+  const { register, handleSubmit, setFocus, reset } =
+    useForm<FormValuesTypes>();
 
   const TaskInput = () => {
     useEffect(() => {
@@ -48,6 +49,11 @@ const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
     );
   };
 
+  const resetForm = () => {
+    reset({ task: "", description: "" });
+    onClose();
+  };
+
   const onSubmit = async (values: FormValuesTypes) => {
     const res = await fetch("/api/todos", {
       method: "POST",
@@ -62,7 +68,7 @@ const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
     const data = await res.json();
 
     addTask(data.data);
-    onClose();
+    resetForm();
   };
 
   return (
@@ -98,7 +104,7 @@ const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
               </Stack>
             </ModalBody>
             <ModalFooter>
-              <Button mr={3} onClick={onClose} type="reset">
+              <Button mr={3} onClick={resetForm}>
                 Cancel
               </Button>
               <Button type="submit" colorScheme={"green"} bg={"#16c60c"}>

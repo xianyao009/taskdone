@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import {
   Box,
@@ -27,7 +28,25 @@ type AddTaskModalFormProps = {
 };
 
 const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
-  const { register, handleSubmit } = useForm<FormValuesTypes>();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { register, handleSubmit, setFocus } = useForm<FormValuesTypes>();
+
+  const TaskInput = () => {
+    useEffect(() => {
+      setFocus("task");
+    }, [setFocus]);
+
+    return (
+      <Input
+        id="task"
+        type="text"
+        placeholder="Grind Leetcode"
+        _placeholder={{ opacity: 0.6 }}
+        {...register("task")}
+      />
+    );
+  };
 
   const onSubmit = async (values: FormValuesTypes) => {
     const res = await fetch("/api/todos", {
@@ -45,8 +64,6 @@ const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
     addTask(data.data);
     onClose();
   };
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -66,13 +83,7 @@ const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
               <Stack>
                 <FormControl isRequired>
                   <FormLabel htmlFor="task">Task</FormLabel>
-                  <Input
-                    id="task"
-                    type="text"
-                    placeholder="Grind Leetcode"
-                    _placeholder={{ opacity: 0.6 }}
-                    {...register("task")}
-                  />
+                  <TaskInput />
                 </FormControl>
                 <FormControl>
                   <FormLabel htmlFor="description">Description</FormLabel>

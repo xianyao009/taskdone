@@ -1,4 +1,4 @@
-import AddTaskModal from "./AddTaskModal";
+import AddTaskModalForm from "./AddTaskModalForm";
 import {
   Accordion,
   AccordionButton,
@@ -13,15 +13,16 @@ import {
 
 type TodoListProps = {
   todos: Array<ITodoType>;
+  addTask: (data: any) => void;
 };
 
-const TodoList = ({ todos }: TodoListProps) => {
+const TodoList = ({ todos, addTask }: TodoListProps) => {
   const expandedColors = useColorModeValue("gray.100", "gray.700");
   return (
     <>
       <Center>
-        <Box ml={{ base: 0, md: 60 }} maxW="70%">
-          <AddTaskModal />
+        <Box ml={{ base: 0, md: 60 }} maxW="60%" mb={20}>
+          <AddTaskModalForm addTask={addTask} />
           <Accordion allowMultiple>
             {todos.map((todo: ITodoType) => (
               <AccordionItem key={todo._id}>

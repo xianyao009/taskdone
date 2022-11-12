@@ -1,3 +1,4 @@
+import { useState } from "react";
 import LinkContainer from "../../components/containers/LinkContainer";
 import AppHeaderSideBarContainer from "../../components/containers/AppHeaderSideBarContainer";
 import TodoList from "../../components/containers/TodoList";
@@ -9,7 +10,13 @@ type TaskdoneProps = {
   todos: Array<ITodoType>;
 };
 
-const app = ({ isSuccess, todos }: TaskdoneProps) => {
+const App = ({ isSuccess, todos }: TaskdoneProps) => {
+  const [toDoList, setToDoList] = useState(todos);
+  // Re-render the To-do List
+  const addTask = (data: any) => {
+    setToDoList((prev) => [...prev, data]);
+  };
+
   if (!isSuccess)
     return (
       <>
@@ -29,7 +36,7 @@ const app = ({ isSuccess, todos }: TaskdoneProps) => {
     <>
       <Box>
         <AppHeaderSideBarContainer />
-        <TodoList todos={todos} />
+        <TodoList todos={toDoList} addTask={addTask} />
       </Box>
     </>
   );
@@ -53,4 +60,4 @@ export async function getStaticProps() {
   };
 }
 
-export default app;
+export default App;

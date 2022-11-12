@@ -17,6 +17,10 @@ const App = ({ isSuccess, todos }: TaskdoneProps) => {
     setToDoList((prev) => [...prev, data]);
   };
 
+  const deleteTask = (id: string) => {
+    setToDoList((prev) => prev.filter((task) => task._id !== id));
+  };
+
   if (!isSuccess)
     return (
       <>
@@ -36,7 +40,7 @@ const App = ({ isSuccess, todos }: TaskdoneProps) => {
     <>
       <Box>
         <AppHeaderSideBarContainer />
-        <TodoList todos={toDoList} addTask={addTask} />
+        <TodoList todos={toDoList} addTask={addTask} deleteTask={deleteTask} />
       </Box>
     </>
   );

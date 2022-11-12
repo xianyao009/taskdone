@@ -1,3 +1,4 @@
+import DeleteTaskModal from "./DeleteTaskModal";
 import AddTaskModalForm from "./AddTaskModalForm";
 import {
   Accordion,
@@ -8,22 +9,24 @@ import {
   Box,
   Center,
   Checkbox,
+  HStack,
   useColorModeValue,
 } from "@chakra-ui/react";
 
 type TodoListProps = {
   todos: Array<ITodoType>;
   addTask: (data: any) => void;
+  deleteTask: (id: string) => void;
 };
 
-const TodoList = ({ todos, addTask }: TodoListProps) => {
+const TodoList = ({ todos, addTask, deleteTask }: TodoListProps) => {
   const expandedColors = useColorModeValue("gray.100", "gray.700");
   return (
     <>
       <Center>
-        <Box ml={{ base: 0, md: 60 }} maxW="60%" mb={20}>
+        <Box ml={{ base: 0, md: 60 }} w="60%" mb={20}>
           <AddTaskModalForm addTask={addTask} />
-          <Accordion allowMultiple>
+          <Accordion defaultIndex={[0]} allowMultiple>
             {todos.map((todo: ITodoType) => (
               <AccordionItem key={todo._id}>
                 <AccordionButton _expanded={{ bg: expandedColors }} p={4}>
@@ -37,7 +40,16 @@ const TodoList = ({ todos, addTask }: TodoListProps) => {
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
-                <AccordionPanel>{todo.description}</AccordionPanel>
+                <AccordionPanel m="2">
+                  {todo.description}
+                  <HStack>
+                    <DeleteTaskModal
+                      task={todo.title}
+                      id={todo._id}
+                      deleteTask={deleteTask}
+                    />
+                  </HStack>
+                </AccordionPanel>
               </AccordionItem>
             ))}
           </Accordion>

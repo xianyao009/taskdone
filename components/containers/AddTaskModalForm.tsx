@@ -36,7 +36,7 @@ const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {
   const TaskInput = () => {
     useEffect(() => {
       setFocus("task");
-    }, [setFocus]);
+    });
 
     return (
       <Input

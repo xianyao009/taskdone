@@ -13,7 +13,7 @@ type TaskdoneProps = {
 const App = ({ isSuccess, todos }: TaskdoneProps) => {
   const [toDoList, setToDoList] = useState(todos);
   // Re-render the To-do List
-  const addTask = (data: any) => {
+  const addTask = (data: ITodoType) => {
     setToDoList((prev) => [...prev, data]);
   };
 

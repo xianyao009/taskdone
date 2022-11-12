@@ -24,7 +24,7 @@ type FormValuesTypes = {
 };
 
 type AddTaskModalFormProps = {
-  addTask: (data: any) => void;
+  addTask: (data: ITodoType) => void;
 };
 
 const AddTaskModalForm = ({ addTask }: AddTaskModalFormProps) => {

@@ -15,7 +15,7 @@ import {
 
 type TodoListProps = {
   todos: Array<ITodoType>;
-  addTask: (data: any) => void;
+  addTask: (data: ITodoType) => void;
   deleteTask: (id: string) => void;
 };
 

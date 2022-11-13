@@ -12,6 +12,7 @@ type TaskdoneProps = {
 
 const App = ({ isSuccess, todos }: TaskdoneProps) => {
   const [toDoList, setToDoList] = useState(todos);
+
   // Re-render the To-do List
   const addTask = (data: ITodoType) => {
     setToDoList((prev) => [...prev, data]);
@@ -19,6 +20,16 @@ const App = ({ isSuccess, todos }: TaskdoneProps) => {
 
   const deleteTask = (id: string) => {
     setToDoList((prev) => prev.filter((task) => task._id !== id));
+  };
+
+  const editTask = (id: string, title: string, description: string) => {
+    const editedToDoList = toDoList.map((task) => {
+      if (id === task._id) {
+        return { ...task, title: title, description: description };
+      }
+      return task;
+    });
+    setToDoList(editedToDoList);
   };
 
   if (!isSuccess)
@@ -40,7 +51,12 @@ const App = ({ isSuccess, todos }: TaskdoneProps) => {
     <>
       <Box>
         <AppHeaderSideBarContainer />
-        <TodoList todos={toDoList} addTask={addTask} deleteTask={deleteTask} />
+        <TodoList
+          todos={toDoList}
+          addTask={addTask}
+          deleteTask={deleteTask}
+          editTask={editTask}
+        />
       </Box>
     </>
   );

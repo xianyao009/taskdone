@@ -1,6 +1,5 @@
 import { AiOutlineDelete } from "react-icons/ai";
 import {
-  Box,
   Button,
   Modal,
   ModalOverlay,
@@ -17,7 +16,7 @@ import {
 type DeleteTaskModalProps = {
   task: string;
   id: string;
-  deleteTask: (id: any) => void;
+  deleteTask: (id: string) => void;
 };
 
 const DeleteTaskModal = ({ task, id, deleteTask }: DeleteTaskModalProps) => {
@@ -39,16 +38,14 @@ const DeleteTaskModal = ({ task, id, deleteTask }: DeleteTaskModalProps) => {
 
   return (
     <>
-      <Box textAlign="right">
-        <Tooltip hasArrow label="Delete" openDelay={500}>
-          <IconButton
-            onClick={onOpen}
-            variant="ghost"
-            aria-label="delete"
-            icon={<AiOutlineDelete fontSize="25" />}
-          />
-        </Tooltip>
-      </Box>
+      <Tooltip hasArrow label="Delete" openDelay={500}>
+        <IconButton
+          onClick={onOpen}
+          variant="ghost"
+          aria-label="delete"
+          icon={<AiOutlineDelete fontSize="25" />}
+        />
+      </Tooltip>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

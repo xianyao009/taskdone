@@ -32,6 +32,16 @@ const App = ({ isSuccess, todos }: TaskdoneProps) => {
     setToDoList(editedToDoList);
   };
 
+  const toggleTaskCompleted = (id: string, toggledCompleted: boolean) => {
+    const updatedToDoList = todos.map((task) => {
+      if (id === task._id) {
+        return { ...task, completed: toggledCompleted };
+      }
+      return task;
+    });
+    setToDoList(updatedToDoList);
+  };
+
   if (!isSuccess)
     return (
       <>
@@ -56,6 +66,7 @@ const App = ({ isSuccess, todos }: TaskdoneProps) => {
           addTask={addTask}
           deleteTask={deleteTask}
           editTask={editTask}
+          toggleTaskCompleted={toggleTaskCompleted}
         />
       </Box>
     </>

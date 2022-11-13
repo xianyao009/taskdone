@@ -18,10 +18,31 @@ type TodoListProps = {
   addTask: (data: ITodoType) => void;
   deleteTask: (id: string) => void;
   editTask: (id: string, title: string, description: string) => void;
+  toggleTaskCompleted: (id: string, isCompleted: boolean) => void;
 };
 
-const TodoList = ({ todos, addTask, deleteTask, editTask }: TodoListProps) => {
+const TodoList = ({
+  todos,
+  addTask,
+  deleteTask,
+  editTask,
+  toggleTaskCompleted,
+}: TodoListProps) => {
   const expandedColors = useColorModeValue("gray.100", "gray.700");
+
+  const checkboxChanged = async (id: string, isCompleted: boolean) => {
+    await fetch("/api/todos/" + id, {
+      method: "PUT",
+      body: JSON.stringify({
+        completed: !isCompleted,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    toggleTaskCompleted(id, !isCompleted);
+  };
+
   return (
     <>
       <Center>
@@ -35,6 +56,8 @@ const TodoList = ({ todos, addTask, deleteTask, editTask }: TodoListProps) => {
                     size="lg"
                     colorScheme="green"
                     borderColor="gray.500"
+                    defaultChecked={todo.completed}
+                    onChange={() => checkboxChanged(todo._id, todo.completed)}
                   />
                   <Box ml={4} flex="1" textAlign="left">
                     {todo.title}

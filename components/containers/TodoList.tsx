@@ -1,4 +1,5 @@
 import DeleteTaskModal from "./DeleteTaskModal";
+import EditTaskModal from "./EditTaskModal";
 import AddTaskModalForm from "./AddTaskModalForm";
 import {
   Accordion,
@@ -16,16 +17,17 @@ type TodoListProps = {
   todos: Array<ITodoType>;
   addTask: (data: ITodoType) => void;
   deleteTask: (id: string) => void;
+  editTask: (id: string, title: string, description: string) => void;
 };
 
-const TodoList = ({ todos, addTask, deleteTask }: TodoListProps) => {
+const TodoList = ({ todos, addTask, deleteTask, editTask }: TodoListProps) => {
   const expandedColors = useColorModeValue("gray.100", "gray.700");
   return (
     <>
       <Center>
         <Box ml={{ base: 0, md: 60 }} w="60%" mb={20}>
           <AddTaskModalForm addTask={addTask} />
-          <Accordion defaultIndex={[0]} allowMultiple>
+          <Accordion allowMultiple>
             {todos.map((todo: ITodoType) => (
               <AccordionItem key={todo._id}>
                 <AccordionButton _expanded={{ bg: expandedColors }} p={4}>
@@ -41,11 +43,14 @@ const TodoList = ({ todos, addTask, deleteTask }: TodoListProps) => {
                 </AccordionButton>
                 <AccordionPanel m="2">
                   {todo.description}
-                  <DeleteTaskModal
-                    task={todo.title}
-                    id={todo._id}
-                    deleteTask={deleteTask}
-                  />
+                  <Box textAlign="right">
+                    <EditTaskModal todo={todo} editTask={editTask} />
+                    <DeleteTaskModal
+                      task={todo.title}
+                      id={todo._id}
+                      deleteTask={deleteTask}
+                    />
+                  </Box>
                 </AccordionPanel>
               </AccordionItem>
             ))}

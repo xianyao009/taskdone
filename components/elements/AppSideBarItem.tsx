@@ -35,7 +35,7 @@ const AppSideBarItem = ({ onClose, display }: AppSideBarItemProps) => {
           />
         </Flex>
         <Container>
-          <AppSideBarLink text="All" />
+          <AppSideBarLink text="Active" />
           <AppSideBarLink text="Completed" />
         </Container>
       </Box>

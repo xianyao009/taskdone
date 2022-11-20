@@ -19,6 +19,7 @@ type TodoListProps = {
   deleteTask: (id: string) => void;
   editTask: (id: string, title: string, description: string) => void;
   toggleTaskCompleted: (id: string, isCompleted: boolean) => void;
+  filterMap: (task: { completed: boolean }) => boolean;
 };
 
 const TodoList = ({
@@ -27,6 +28,7 @@ const TodoList = ({
   deleteTask,
   editTask,
   toggleTaskCompleted,
+  filterMap,
 }: TodoListProps) => {
   const expandedColors = useColorModeValue("gray.100", "gray.700");
 
@@ -49,7 +51,7 @@ const TodoList = ({
         <Box ml={{ base: 0, md: 60 }} w="60%" mb={20}>
           <AddTaskModalForm addTask={addTask} />
           <Accordion allowMultiple>
-            {todos.map((todo: ITodoType) => (
+            {todos.filter(filterMap).map((todo: ITodoType) => (
               <AccordionItem key={todo._id}>
                 <AccordionButton _expanded={{ bg: expandedColors }} p={4}>
                   <Checkbox

@@ -1,20 +1,24 @@
 import Logo from "./Logo";
-import AppSideBarLink from "./AppSideBarLink";
 import {
   Box,
   CloseButton,
-  Container,
   Flex,
   Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 
 type AppSideBarItemProps = {
   onClose: () => void;
   display?: object;
+  filterList: JSX.Element[];
 };
 
-const AppSideBarItem = ({ onClose, display }: AppSideBarItemProps) => {
+const AppSideBarItem = ({
+  onClose,
+  display,
+  filterList,
+}: AppSideBarItemProps) => {
   return (
     <>
       <Box
@@ -34,10 +38,7 @@ const AppSideBarItem = ({ onClose, display }: AppSideBarItemProps) => {
             onClick={onClose}
           />
         </Flex>
-        <Container>
-          <AppSideBarLink text="Active" />
-          <AppSideBarLink text="Completed" />
-        </Container>
+        <VStack>{filterList}</VStack>
       </Box>
     </>
   );

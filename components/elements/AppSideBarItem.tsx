@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import LinkContainer from "../containers/LinkContainer";
 
 type AppSideBarItemProps = {
   onClose: () => void;
@@ -30,9 +31,9 @@ const AppSideBarItem = ({
         display={display}
       >
         <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-          <Text>
+          <LinkContainer linkTo="/" target="_self">
             <Logo fontSize={28} />
-          </Text>
+          </LinkContainer>
           <CloseButton
             display={{ base: "flex", md: "none" }}
             onClick={onClose}

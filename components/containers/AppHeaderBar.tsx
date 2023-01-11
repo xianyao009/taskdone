@@ -1,7 +1,7 @@
 import ColorModeToggleButton from "../elements/ColorModeToggleButton";
-import MenuIconButton from "../elements/MenuIconButton";
-import MenuItemComponent from "../elements/MenuItemComponent";
-import { CgProfile } from "react-icons/cg";
+// import MenuIconButton from "../elements/MenuIconButton";
+// import MenuItemComponent from "../elements/MenuItemComponent";
+// import { CgProfile } from "react-icons/cg";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
@@ -39,13 +39,13 @@ const AppHeaderBar = ({ onOpen }: AppHeaderBarProps) => {
         </Box>
         <HStack spacing={5}>
           <ColorModeToggleButton />
-          <MenuIconButton
+          {/* <MenuIconButton
             icon={<CgProfile fontSize={"2.25rem"} />}
             label="Profile"
           >
             <MenuItemComponent linkTo="/settings" elementString="Settings" />
             <MenuItemComponent linkTo="/" elementString="Log out" />
-          </MenuIconButton>
+          </MenuIconButton> */}
         </HStack>
       </Flex>
     </>

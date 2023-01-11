@@ -1,6 +1,6 @@
 import Logo from "../elements/Logo";
 import GetStartedButton from "../elements/GetStartedButton";
-import SignInButton from "../elements/SignInButton";
+// import SignInButton from "../elements/SignInButton";
 import { Container, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 
 const HomeContainer = () => {
@@ -23,7 +23,7 @@ const HomeContainer = () => {
           </Heading>
           <HStack pt={5} spacing="20px">
             <GetStartedButton />
-            <SignInButton buttonVariant="solid" />
+            {/* <SignInButton buttonVariant="solid" /> */}
           </HStack>
         </Stack>
       </Container>

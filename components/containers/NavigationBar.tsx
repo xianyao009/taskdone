@@ -1,7 +1,7 @@
 import Logo from "../elements/Logo";
 import LinkContainer from "../containers/LinkContainer";
 import GetStartedButton from "../elements/GetStartedButton";
-import SignInButton from "../elements/SignInButton";
+// import SignInButton from "../elements/SignInButton";
 import MenuIconButton from "../elements/MenuIconButton";
 import MenuItemComponent from "../elements/MenuItemComponent";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -23,7 +23,7 @@ const NavigationBar = () => {
         </LinkContainer>
         <HStack>
           <Box display={{ base: "none", md: "flex" }}>
-            <SignInButton buttonVariant="ghost" />
+            {/* <SignInButton buttonVariant="ghost" /> */}
             <GetStartedButton />
           </Box>
           <Box pl={5}>

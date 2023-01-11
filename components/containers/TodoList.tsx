@@ -10,6 +10,7 @@ import {
   Box,
   Center,
   Checkbox,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -62,12 +63,12 @@ const TodoList = ({
                     onChange={() => checkboxChanged(todo._id, todo.completed)}
                   />
                   <Box ml={4} flex="1" textAlign="left">
-                    {todo.title}
+                    <Text as={todo.completed ? "s" : "b"}>{todo.title}</Text>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel m="2">
-                  {todo.description}
+                  <Text as={todo.completed ? "s" : "abbr"}>{todo.description}</Text>
                   <Box textAlign="right">
                     <EditTaskModal todo={todo} editTask={editTask} />
                     <DeleteTaskModal

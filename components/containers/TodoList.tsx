@@ -68,7 +68,9 @@ const TodoList = ({
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel m="2">
-                  <Text as={todo.completed ? "s" : "abbr"}>{todo.description}</Text>
+                  <Text as={todo.completed ? "s" : "abbr"}>
+                    {todo.description}
+                  </Text>
                   <Box textAlign="right">
                     <EditTaskModal todo={todo} editTask={editTask} />
                     <DeleteTaskModal
